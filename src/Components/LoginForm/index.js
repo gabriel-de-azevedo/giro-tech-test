@@ -17,7 +17,7 @@ export const LoginForm = () => {
       p={4}
       shadow="md"
     >
-      <Stack>
+      <Stack spacing={4}>
         <Box>
           <FormLabel>Email</FormLabel>
           <Input type="email" />
