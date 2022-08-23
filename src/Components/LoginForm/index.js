@@ -4,9 +4,14 @@ import {
   FormControl,
   FormLabel,
   Input,
+  InputGroup,
+  InputLeftAddon,
   Stack,
   useToast,
 } from '@chakra-ui/react';
+
+import { MdEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -57,21 +62,27 @@ export const LoginForm = () => {
       <Stack spacing={4} as="form" onSubmit={handleLogin}>
         <Box>
           <FormLabel>Email</FormLabel>
-          <Input
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <InputGroup>
+            <InputLeftAddon children={<MdEmail />} />
+            <Input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </InputGroup>
         </Box>
         <Box>
           <FormLabel>Senha</FormLabel>
-          <Input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <InputGroup>
+            <InputLeftAddon children={<RiLockPasswordFill />} />
+            <Input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </InputGroup>
         </Box>
         <Box />
         <Button type="submit">Login</Button>
