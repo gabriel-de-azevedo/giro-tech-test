@@ -7,17 +7,20 @@ import {
   Input,
   InputGroup,
   InputLeftAddon,
+  Link,
   Stack,
   Stat,
   StatArrow,
   StatHelpText,
   StatLabel,
   StatNumber,
+  useToast,
 } from '@chakra-ui/react';
 
 import { MdCalendarToday } from 'react-icons/md';
 
 import { useEffect, useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -27,6 +30,8 @@ export const SimulationCard = () => {
   const [selic, setSelic] = useState(0);
   const [result, setResult] = useState(0);
   const [profit, setProfit] = useState(0);
+
+  const toast = useToast();
 
   useEffect(() => {
     axios
@@ -48,6 +53,19 @@ export const SimulationCard = () => {
     setResult(
       (investment * ((selic / 100 / 12) * time) + investment).toFixed(2)
     );
+  };
+
+  const handleLogout = (_) => {
+    localStorage.removeItem('@Giro:email');
+
+    toast({
+      title: 'Até mais',
+      description: 'Volte quando quiser',
+      status: 'info',
+      position: 'top-right',
+      duration: 2000,
+      isClosable: true,
+    });
   };
 
   return (
@@ -99,6 +117,15 @@ export const SimulationCard = () => {
             </StatHelpText>
           </Stat>
         </Collapse>
+        <Link
+          alignSelf="flex-end"
+          as={RouterLink}
+          to="/"
+          color="red.500"
+          onClick={handleLogout}
+        >
+          Logout
+        </Link>
       </Stack>
     </FormControl>
   );

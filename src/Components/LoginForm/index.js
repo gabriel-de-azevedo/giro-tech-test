@@ -28,6 +28,8 @@ export const LoginForm = () => {
     e.preventDefault();
 
     if (validateLogin(email, password)) {
+      localStorage.setItem('@Giro:email', email);
+
       toast({
         title: 'Bem-vindo',
         description: 'Que bom ver você novamente',
