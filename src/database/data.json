@@ -1,0 +1,16 @@
+{
+  "users": {
+    "user1@email.com": {
+      "email": "user1@email.com",
+      "password": "user1pass"
+    },
+    "user2@email.com": {
+      "email": "user2@email.com",
+      "password": "user2pass"
+    },
+    "user3@email.com": {
+      "email": "user3@email.com",
+      "password": "user3pass"
+    }
+  }
+}
