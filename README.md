@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Giro.Invest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Giro.Invest é uma aplicação Front-End desenvolvida usando a biblioteca React como parte de um desafio prático: criar um sistema para cálculo de rendimentos de uma aplicação com juros compostos que possua a funcionalidade de login em menos de quatro horas.
 
-## Available Scripts
+Todo o processo de desenvolvimento foi feito utilizando o Visual Studio Code como IDE. As páginas nessa aplicação foram desenvolvidas com o intuito de serem o mais simples possível, priorizando eficiência e rapidez na sua criação acima do design. Assim, a biblioteca de componentes Chakra UI foi utilizada para acelerar o processo de estilização e garantir um design responsivo.
 
-In the project directory, you can run:
+<br/>
 
-### `npm start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Login de usuário
+- Simulação de investimento
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br/>
 
-### `npm test`
+## Como Executar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A aplicação pode ser iniciada usando um dos seguintes comandos, dependendo do gerenciador de pacote utilizado
+para instalar suas dependências:
 
-### `npm run build`
+### `npm run start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ou
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `yarn start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br/>
 
-### `npm run eject`
+A aplicação poderá ser acessada em http://localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Como Fazer Login
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Como ainda não existe a funcionalidade de cadastro, é necessário fazer login com os dados de usuários já existentes no banco de dados simplificado (arquivo data.json na pasta database):
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Email do usuário / senha do usuário;
+- user1@email.com / user1pass;
+- user2@email.com / user2pass;
+- user3@email.com / user3pass;
