@@ -27,7 +27,7 @@ import axios from 'axios';
 export const SimulationCard = () => {
   const [investment, setInvestment] = useState(1000);
   const [time, setTime] = useState(10);
-  const [selic, setSelic] = useState(0);
+  const [selic, setSelic] = useState(13.75);
   const [result, setResult] = useState(0);
   const [profit, setProfit] = useState(0);
 
