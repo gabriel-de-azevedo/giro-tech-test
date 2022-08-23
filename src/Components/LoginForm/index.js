@@ -9,7 +9,14 @@ import {
 
 export const LoginForm = () => {
   return (
-    <FormControl w="300px">
+    <FormControl
+      isRequired
+      w="300px"
+      borderWidth="1px"
+      borderRadius={8}
+      p={4}
+      shadow="md"
+    >
       <Stack>
         <Box>
           <FormLabel>Email</FormLabel>
