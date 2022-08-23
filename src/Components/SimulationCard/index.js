@@ -14,19 +14,41 @@ import {
   StatLabel,
   StatNumber,
 } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
 
 import { MdCalendarToday } from 'react-icons/md';
+
+import { useEffect, useState } from 'react';
+
+import axios from 'axios';
 
 export const SimulationCard = () => {
   const [investment, setInvestment] = useState(1000);
   const [time, setTime] = useState(10);
+  const [selic, setSelic] = useState(0);
   const [result, setResult] = useState(0);
   const [profit, setProfit] = useState(0);
 
   useEffect(() => {
+    axios
+      .get(
+        'http://api.bcb.gov.br/dados/serie/bcdata.sgs.1178/dados/ultimos/01?formato=json'
+      )
+      .then((response) => {
+        return setSelic(parseFloat(response.data[0].valor));
+      });
+  }, [result]);
+
+  useEffect(() => {
     setProfit((result - investment).toFixed(2));
   }, [result]);
+
+  const handleResult = (e) => {
+    e.preventDefault();
+
+    setResult(
+      (investment * ((selic / 100 / 12) * time) + investment).toFixed(2)
+    );
+  };
 
   return (
     <FormControl
@@ -37,7 +59,7 @@ export const SimulationCard = () => {
       p={4}
       shadow="md"
     >
-      <Stack spacing={4}>
+      <Stack spacing={4} as="form" onSubmit={handleResult}>
         <Box>
           <FormLabel>Investimento</FormLabel>
           <InputGroup>
@@ -66,7 +88,7 @@ export const SimulationCard = () => {
           </InputGroup>
         </Box>
         <Box />
-        <Button onClick={() => setResult(result + 1)}>Simular</Button>
+        <Button type="submit">Simular</Button>
         <Collapse in={result} animateOpacity>
           <Stat>
             <StatLabel>Resultado</StatLabel>
