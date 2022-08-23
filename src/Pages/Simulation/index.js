@@ -1,3 +1,5 @@
+import { SimulationCard } from '../../Components/SimulationCard';
+
 export const Simulation = () => {
-  return <div>Simulation</div>;
+  return <SimulationCard />;
 };
